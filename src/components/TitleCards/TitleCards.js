@@ -65,6 +65,7 @@ const Container = styled.div`
 
   h2 {
     margin-bottom: 8px;
+    text-align: left;
 
     @media (max-width: 800px) {
       font-size: 20px;
