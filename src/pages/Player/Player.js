@@ -17,7 +17,7 @@ function Player() {
     method: 'GET',
     headers: {
       accept: process.env.API_ACCEPT,
-      Authorization: process.env.API_VIDEOS_AUTHORIZATION
+      Authorization: `Bearer ${process.env.API_VIDEOS_AUTHORIZATION}`
     }
   };
 

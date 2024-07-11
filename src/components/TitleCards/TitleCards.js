@@ -11,8 +11,7 @@ function TitleCards({ title, category }) {
     method: "GET",
     headers: {
       accept: process.env.API_ACCEPT,
-      Authorization:
-        process.env.API_CARDS_AUTHORISATION,
+      Authorization: `Bearer ${process.env.API_CARDS_AUTHORISATION}`
     },
   };
 
