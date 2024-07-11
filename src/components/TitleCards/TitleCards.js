@@ -10,9 +10,9 @@ function TitleCards({ title, category }) {
   const options = {
     method: "GET",
     headers: {
-      accept: "application/json",
+      accept: process.env.API_ACCEPT,
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODM1NGRmMmMxYTBkZjViZjZmNTk2NjZhY2M3NTc3YyIsIm5iZiI6MTcyMDQ5MTM0Mi4xNDQwMzMsInN1YiI6IjY2OGM5Y2FiZWNmNDVkNzhmYjllYTM3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9WoQEpFbKE63BRyMzWcxsPX-z_m-ysjU3ANp8mA1W0Q",
+        process.env.API_CARDS_AUTHORISATION,
     },
   };
 
@@ -39,7 +39,7 @@ function TitleCards({ title, category }) {
     <Container>
       <h2>{title ? title : "Popular on Netflix"}</h2>
       <CardList ref={cardsRef}>
-        {apiData.map((card, index) => {
+        {apiData?.map((card, index) => {
           return (
             <Link to={`/player/${card.id}`} key={index}>
               <Card key={index}>

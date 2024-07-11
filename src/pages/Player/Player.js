@@ -16,9 +16,9 @@ function Player() {
   const options = {
     method: 'GET',
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer YOUR_API_KEY', // Replace with your actual API key
-    },
+      accept: process.env.API_ACCEPT,
+      Authorization: process.env.API_VIDEOS_AUTHORIZATION
+    }
   };
 
   useEffect(() => {
