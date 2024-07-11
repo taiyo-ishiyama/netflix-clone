@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Player() {
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -14,11 +15,11 @@ function Player() {
   });
 
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      accept: process.env.API_ACCEPT,
-      Authorization: `Bearer ${process.env.API_VIDEOS_AUTHORIZATION}`
-    }
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.REACT_APP_TMDB_API_KEY}`,
+    },
   };
 
   useEffect(() => {

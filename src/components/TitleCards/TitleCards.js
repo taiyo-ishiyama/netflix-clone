@@ -10,8 +10,8 @@ function TitleCards({ title, category }) {
   const options = {
     method: "GET",
     headers: {
-      accept: process.env.API_ACCEPT,
-      Authorization: `Bearer ${process.env.API_CARDS_AUTHORISATION}`
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.REACT_APP_TMDB_API_KEY}`,
     },
   };
 
@@ -77,7 +77,7 @@ const Container = styled.div`
     margin-top: 20px;
     margin-bottom: 0;
   }
-`
+`;
 
 const CardList = styled.div`
   display: flex;
@@ -90,17 +90,16 @@ const CardList = styled.div`
     cursor: pointer;
 
     @media (max-width: 800px) {
-    width: 200px;
+      width: 200px;
     }
     @media (max-width: 500px) {
-    width: 165px;
+      width: 165px;
     }
   }
   &::-webkit-scrollbar {
     display: none;
   }
-
-`
+`;
 
 const Card = styled.div`
   position: relative;
@@ -113,10 +112,10 @@ const Card = styled.div`
     color: #fff;
 
     @media (max-width: 800px) {
-    font-size: 12px;
+      font-size: 12px;
     }
     @media (max-width: 500px) {
       font-size: 10px;
     }
   }
-`
+`;
